@@ -202,8 +202,15 @@ except ImportError:
     pass  # caught by imported HAS_BOTO3
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.ec2 import (ec2_argument_spec, get_aws_connection_info, boto3_conn,
-                                      camel_dict_to_snake_dict, HAS_BOTO3)
+from ansible.module_utils.ec2 import (
+    ec2_argument_spec,
+    get_aws_connection_info,
+    boto3_conn,
+    camel_dict_to_snake_dict,
+    boto3_tag_list_to_ansible_dict,
+    ansible_dict_to_boto3_filter_list,
+    ansible_dict_to_boto3_tag_list,
+    HAS_BOTO3)
 
 
 DRY_RUN_GATEWAYS = [
